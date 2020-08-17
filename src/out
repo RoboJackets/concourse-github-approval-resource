@@ -10,7 +10,7 @@ from os import listdir, path
 from subprocess import run
 from sys import argv, stderr, stdin
 
-from requests import post, get
+from requests import get, post
 
 required_source_fields = ("pull_request", "token")
 optional_source_fields = ("debug",)
@@ -84,7 +84,9 @@ data = {
 }
 
 response = get(f"{api_base_url}/repos/{owner}/{repo}/pulls/{pull_number}", headers=headers)
-assert (response.status_code == 200), f"Got unexpected response code {response.status_code} from GitHub: {response.json()}"
+assert (
+    response.status_code == 200
+), f"Got unexpected response code {response.status_code} from GitHub: {response.json()}"
 
 json = response.json()
 
@@ -96,10 +98,7 @@ if response.json()["user"]["type"].lower() != "bot":
         dumps(
             {
                 "version": {"status": "skipped"},
-                "metadata": [
-                    {"name": "url", "value": url},
-                    {"name": "html_url", "value": html_url},
-                ],  # noqa: E231
+                "metadata": [{"name": "url", "value": url}, {"name": "html_url", "value": html_url},],  # noqa: E231
             }
         )
     )
