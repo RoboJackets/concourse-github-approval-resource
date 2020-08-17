@@ -120,7 +120,7 @@ print(
         {
             "version": {"status": "approved"},
             "metadata": [
-                {"name": "id", "value": review_id},
+                {"name": "id", "value": str(review_id)},
                 {"name": "pull_request_url", "value": pull_request_url},
                 {"name": "html_url", "value": html_url_approval},
             ],  # noqa: E231
