@@ -20,7 +20,7 @@
     },
     "required": [
         "pull_request_url",
-        "commit_id",
+        "commit",
         "token"
     ]
 }
