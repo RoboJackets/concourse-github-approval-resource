@@ -6,7 +6,7 @@
             "type": "string",
             "format": "uri"
         },
-        "commit_id": {
+        "commit": {
             "type": "string",
             "regex": "[a-z0-9]{40}"
         },

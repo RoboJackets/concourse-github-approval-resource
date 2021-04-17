@@ -46,7 +46,7 @@ api_base_url = "https://" + ("api.github.com" if host == "github.com" else host 
 owner = pull_request_url_parts[3]
 repo = pull_request_url_parts[4]
 
-commit_id = concourse_input["commit_id"]
+commit_id = concourse_input["commit"]
 pull_number = pull_request_url_parts[6]
 
 headers = {
