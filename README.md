@@ -6,7 +6,7 @@ Concourse resource to automatically approve a pull request if it was opened by a
 ## Source configuration
 
 - `pull_request_url` (required) - pull request that is being built
-- `commit_id` (required) - commit that is being built
+- `commit` (required) - commit that is being built
 - `token` (required) - GitHub App token to use to authenticate
 - `debug` (optional) - whether to enable debug logging; must be set to boolean true if present
 
